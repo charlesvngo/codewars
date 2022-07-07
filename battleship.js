@@ -68,7 +68,33 @@ const validateBattlefield = (field) => {
     return output;
   };
 
-  const checkSurrounding = (validationField, ship, direction, coords) => {};
+  const checkSurrounding = (ship, direction, coords) => {
+    const shipLengths = {
+      battleship: 4,
+      cruiser: 3,
+      destroyer: 2,
+      submarine: 1,
+    };
+    const shipLocation = [];
+
+    if (direction === "vertical") {
+      for (let i = 0; i < shipLengths[ship]; i++) {
+        shipLocation.push({ x: coords.x, y: coords.y + i });
+      }
+    }
+    if (direction === "horizontal") {
+      for (let i = 0; i < shipLengths[ship]; i++) {
+        shipLocation.push({ x: coords.x + i, y: coords.y });
+      }
+    }
+    console.log(shipLocation);
+    for (let i = -1; i < 1; i++) {
+      for (let j = 0; j < shipLengths[ship]; j++) {
+        // if (direction === "vertical") {
+        // }
+      }
+    }
+  };
 
   for (let y = 0; y < field.length; y++) {
     for (let x = 0; x < field[y].length; x++) {
@@ -76,13 +102,13 @@ const validateBattlefield = (field) => {
         if (validateX(field, x, y)) {
           const ship = validateX(field, x, y);
           validShips[ship]--;
-          checkSurrounding(validationField, ship, "horizontal", { x, y });
+          checkSurrounding(ship, "horizontal", { x, y });
         }
 
         if (validateY(field, x, y)) {
           const ship = validateY(field, x, y);
           validShips[ship]--;
-          checkSurrounding(validationField, ship, "vertical", { x, y });
+          checkSurrounding(ship, "vertical", { x, y });
         }
       }
     }
