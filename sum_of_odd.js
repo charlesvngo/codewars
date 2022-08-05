@@ -24,9 +24,11 @@ const rowSumOddNumbers = (n) => {
   for (let i = 0; i < arrayLength; i++) {
     array.push(1 + i * 2);
   }
+  for (let i = 0; i < n; i++) {
+    output += array[array.length - 1 - i];
+  }
 
   return output;
-  // sum the last n numbers
 };
 
-console.log(rowSumOddNumbers(3));
+console.log(rowSumOddNumbers(2));
