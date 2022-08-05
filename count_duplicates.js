@@ -11,11 +11,21 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
+// const duplicateCount = (text) => {
+//   const uniqueCharacters = Array.from(new Set(text.toLowerCase().split("")));
+//   return text.length - uniqueCharacters.length;
+// };
+
 const duplicateCount = (text) => {
-  const uniqueCharacters = Array.from(new Set(text.toLowerCase().split("")));
-  return text.length - uniqueCharacters.length;
+  const filteredText = text
+    .toLowerCase()
+    .split("")
+    .filter((e, i) => e !== text[i - 1]);
+  return text.length - filteredText.length;
 };
 
 console.log(duplicateCount("abcde"));
 console.log(duplicateCount("aabbcde"));
 console.log(duplicateCount("aabBcde"));
+console.log(duplicateCount("indivisibility"));
+console.log(duplicateCount("Indivisibilities"));
