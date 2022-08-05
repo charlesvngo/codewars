@@ -12,5 +12,10 @@
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 const duplicateCount = (text) => {
-  //...
+  const uniqueCharacters = Array.from(new Set(text.toLowerCase().split("")));
+  return text.length - uniqueCharacters.length;
 };
+
+console.log(duplicateCount("abcde"));
+console.log(duplicateCount("aabbcde"));
+console.log(duplicateCount("aabBcde"));
