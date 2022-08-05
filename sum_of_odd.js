@@ -32,3 +32,8 @@ const rowSumOddNumbers = (n) => {
 };
 
 console.log(rowSumOddNumbers(2));
+
+// Recommended solution is n * n * n
+// function rowSumOddNumbers(n) {
+//   return Math.pow(n, 3);
+// }
