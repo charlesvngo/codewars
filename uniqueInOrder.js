@@ -9,12 +9,22 @@
 
 const uniqueInOrder = (iterable) => {
   let array = [];
-  let output = "";
+  let output = [];
   !Array.isArray(iterable)
     ? (array = [...iterable.split("")])
     : (array = [...iterable]);
 
-  for (let i = 0; i < array.length; i--) {
-    if (array[i] === array[i + 1])
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== array[i + 1]) {
+      output.push(array[i]);
+    }
   }
+  return output;
 };
+
+console.log(uniqueInOrder("ABBCcAD"));
+
+// Below is the highest rated solution on Codewars using .filter()
+// var uniqueInOrder=function(iterable){
+//   return [...iterable].filter((a, i) => a !== iterable[i-1])
+// }
