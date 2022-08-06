@@ -16,12 +16,33 @@
 //   return text.length - uniqueCharacters.length;
 // };
 
+// const duplicateCount = (text) => {
+//   const filteredText = text
+//     .toLowerCase()
+//     .split("")
+//     .filter((e, i) => e !== text[i - 1]);
+//   return text.length - filteredText.length;
+// };
+
 const duplicateCount = (text) => {
-  const filteredText = text
+  const uniqueChars = {};
+  let uniqueCount = 0;
+  text
     .toLowerCase()
     .split("")
-    .filter((e, i) => e !== text[i - 1]);
-  return text.length - filteredText.length;
+    .forEach((e) => {
+      if (uniqueChars[e] !== undefined) {
+        uniqueChars[e] += 1;
+      } else {
+        uniqueChars[e] = 0;
+      }
+    });
+  for (const i in uniqueChars) {
+    if (uniqueChars[i]) {
+      uniqueCount++;
+    }
+  }
+  return uniqueCount;
 };
 
 console.log(duplicateCount("abcde"));
