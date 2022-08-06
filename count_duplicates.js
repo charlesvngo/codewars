@@ -51,7 +51,7 @@ console.log(duplicateCount("aabBcde"));
 console.log(duplicateCount("indivisibility"));
 console.log(duplicateCount("Indivisibilities"));
 
-// Recommended solution from codeWars
+// Recommended solution from code wars
 // function duplicateCount(text){
 //   return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
 // }
