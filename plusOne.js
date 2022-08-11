@@ -37,7 +37,7 @@
  * @return {number[]}
  */
 const plusOne = (digits) => {
-  const output = Number(digits.join("")) + 1;
+  const output = BigInt(digits.join("")) + BigInt(1);
   return output.toString().split("");
 };
 
