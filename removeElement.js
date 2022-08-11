@@ -51,10 +51,20 @@
  * @param {number} val
  * @return {number}
  */
+
 const removeElement = (nums, val) => {
   for (let i = nums.length - 1; i >= 0; i--) {
-    console.log(nums[i]);
+    if (nums[i] === val) {
+      nums.splice(i, 1);
+    }
   }
 };
+const array1 = [1, 2, 3];
+console.log(array1);
+removeElement(array1, 2);
+console.log(array1);
 
-removeElement([1, 2, 3]);
+const array2 = [3, 2, 2, 3];
+console.log(array2);
+removeElement(array2, 3);
+console.log(array2);
