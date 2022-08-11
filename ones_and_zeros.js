@@ -24,3 +24,6 @@ const binaryArrayToNumber = (arr) => {
 console.log(binaryArrayToNumber([0, 0, 0, 1]));
 console.log(binaryArrayToNumber([1, 1, 1, 1]));
 console.log(binaryArrayToNumber([1, 0, 1, 1]));
+
+// Recommended solution from code wars
+// const binaryArrayToNumber = arr => parseInt(arr.join(''), 2);
