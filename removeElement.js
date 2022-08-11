@@ -51,4 +51,10 @@
  * @param {number} val
  * @return {number}
  */
-const removeElement = (nums, val) => {};
+const removeElement = (nums, val) => {
+  for (let i = nums.length - 1; i >= 0; i--) {
+    console.log(nums[i]);
+  }
+};
+
+removeElement([1, 2, 3]);
