@@ -26,11 +26,11 @@
 const mySqrt = (x) => {
   let index = 1;
 
-  while (index * index < x) {
+  while (index * index <= x) {
     index++;
   }
 
-  return index * index === x ? index : index - 1;
+  return index - 1;
 };
 
 console.log(mySqrt(4));
