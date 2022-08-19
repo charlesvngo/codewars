@@ -44,20 +44,7 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 const merge = (nums1, m, nums2, n) => {
-  nums1 = [...nums1.filter((e) => e !== 0)];
-  if (n === 0) {
-    return;
-  }
-  if (m === 0) {
-    for (const num of nums2) {
-      nums1.push(num);
-    }
-    return;
-  }
-  for (let j = 0; j < n; j++) {
-    nums1.push(nums2[j]);
-  }
-  nums1.sort((a, b) => a - b);
+  nums1.splice(m, n, ...nums2).sort((a, b) => a - b);
 };
 
 const array1 = [1, 2, 3, 0, 0, 0];
