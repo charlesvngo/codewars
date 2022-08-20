@@ -35,4 +35,26 @@
  * @return {number[]}
  */
 
-const inorderTraversal = (root) => {};
+const inorderTraversal = (root) => {
+  const output = [];
+  if (root === null) {
+    return output;
+  }
+
+  // Stack to travel down the tree. Will move left first then when it reaches the bottom, traverse up then right.
+  const stack = [];
+  let curr = root;
+
+  while (curr !== null || stack.length !== 0) {
+    if (curr !== null) {
+      stack.push(curr);
+      curr = curr.left;
+    } else {
+      curr = stack.pop();
+      output.push(curr.val);
+      curr = curr.right;
+    }
+  }
+
+  return output;
+};
