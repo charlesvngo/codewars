@@ -45,13 +45,18 @@
  * @return {boolean}
  */
 const isSameTree = (p, q) => {
-  let currentP = p;
-  let currentQ = q;
+  const queue = [p, q];
+  while (queue.length > 0) {
+    const first = queue.shift();
+    const second = queue.shift();
 
-  while (currentP !== null || currentQ !== null) {
-    if (currentP !== currentQ) {
-      return false;
-    }
+    if (!first && !second) continue;
+    if (!first || !second || first.val !== second.val) return false;
+
+    queue.push(first.left);
+    queue.push(second.left);
+    queue.push(first.right);
+    queue.push(second.right);
   }
 
   return true;
